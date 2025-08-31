@@ -1,4 +1,21 @@
-# Autonomous Subteam Tasks
+# Autonomous Subteam Tasks – Submission by Saifullah Hashem
+
+## My Work
+I implemented a **PID controller** with the following features:
+
+- **Variable target speeds**:  
+  - 0–10s → target speed = 0 km/h  
+  - 10–40s → target speed = 60 km/h  
+  - 40–70s → target speed = 30 km/h  
+  - 70s → target speed = 50 km/h  
+
+- **PID control with anti-windup mechanism** to prevent integral oversaturation.  
+- **Automatic logging and visualization**:  
+  - Logs speed data (time, actual, target) into `speed_data.csv`.  
+  - Saves a plot (`speed_plot.png`) showing *target speed vs actual speed vs time* using Matplotlib.  
+- **requirements.txt** added with all Python dependencies.  
+
+---
 
 ## Setup Instructions
 
@@ -18,25 +35,3 @@ cd <repo-name>/task_ws/
 colcon build --symlink-install
 echo "source $(pwd)/install/setup.bash" >> ~/.bashrc
 source ~/.bashrc
-```
-> replace `<repo-name>` with the actual repo name.
-
-### 4. Implement Your Solution
-* Change your directory 
-    ```bash
-    cd src/pre_interview/pre_interview/
-    ```
-* Modify only the `controller.py` file.
-    ```bash
-    nano controller.py
-    ```
-* Make sure your code runs without errors inside the container.
-
-### 5. Test Your Code
-
-* Run the simulation and verify that your PID controller makes the vehicle track the target speed.
-* Save any plots as part of your submission.
-
-## Reminder
-> [!IMPORTANT]  
-> If you are on Windows, all development and testing must be done inside the provided Docker container. This ensures consistency across all submissions.
