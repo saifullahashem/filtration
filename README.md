@@ -1,37 +1,20 @@
-# Autonomous Subteam Tasks – Submission by Saifullah Hashem
+# Autonomous PID Controller By Saifullah
+This repository is a fork of the Autonomous Subteam project where I contributed by implementing and testing a PID controller for variable speed regulation with anti-windup mechanism. The project logs speed response data into CSV files and visualizes the results as plots saved in PNG format.
 
-## My Work
-I implemented a **PID controller** with the following features:
+## Features  
+- PID controller with anti-windup  
+- Speed response logging to CSV  
+- Automatic plotting to PNG for analysis
+- Variable speeds for each period of time
 
-- **Variable target speeds**:  
-  - 0–10s → target speed = 0 km/h  
-  - 10–40s → target speed = 60 km/h  
-  - 40–70s → target speed = 30 km/h  
-  - 70s → target speed = 50 km/h  
+## Setup  
+1. Fork this repository to your GitHub account.  
+2. Clone your fork: `git clone https://github.com/<your-username>/<repo-name>.git`  
+3. Navigate to the workspace: `cd <repo-name>`  
+4. Build the workspace: `colcon build`  
+5. Source the environment: `source install/setup.bash`  
 
-- **PID control with anti-windup mechanism** to prevent integral oversaturation.  
-- **Automatic logging and visualization**:  
-  - Logs speed data (time, actual, target) into `speed_data.csv`.  
-  - Saves a plot (`speed_plot.png`) showing *target speed vs actual speed vs time* using Matplotlib.  
-- **requirements.txt** added with all Python dependencies.  
-
----
-
-## Setup Instructions
-
-### 1. Fork the Repository
-* Click **“Fork”** to create your own copy under your GitHub account.
-
-### 2. Clone Your Fork
-* In your proper environment (i.e., **Linux**, or **docker container** for win) run:
-    ```bash
-    git clone https://github.com/<your-username>/<repo-name>.git
-    ```
-    > make sure to replace `<your-username>` with your username, and `<repo-name>` with the actual repo name.
-
-### 3. Build your workspace
+## Running the Code  
+To test the PID controller and generate results:  
 ```bash
-cd <repo-name>/task_ws/
-colcon build --symlink-install
-echo "source $(pwd)/install/setup.bash" >> ~/.bashrc
-source ~/.bashrc
+ros2 run autonomous_subteam pid_controller
