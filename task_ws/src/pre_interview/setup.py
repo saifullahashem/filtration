@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
 	    'vehicle = pre_interview.vehicle_model:main',
-	    'controller = pre_interview.controller:main'
+	    'controller = pre_interview.controller:main',
+        'vehicle_model = pre_interview.vehicle_model:main',
         ],
     },
 )
